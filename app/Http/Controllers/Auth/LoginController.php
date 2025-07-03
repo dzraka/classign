@@ -25,6 +25,11 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
             $user = Auth::user();
+            // Validasi role jika ada parameter role di request
+            if ($request->has('role') && $user->role !== $request->role) {
+                Auth::logout();
+                return back()->withErrors(['email' => 'Anda tidak memiliki akses sebagai ' . $request->role . '.']);
+            }
             if ($user->role === 'pengajar') {
                 return redirect()->route('pengajar.index');
             } else {
