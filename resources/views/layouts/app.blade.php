@@ -74,9 +74,6 @@
           <li class="nav-item">
             <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start" href="#"><i class="bi bi-archive me-2"></i> Arsip </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start" href="#"><i class="bi bi-gear me-2"></i> Pengaturan </a>
-          </li>
         </ul>
       </div>
       <div class="row position-absolute bottom-0 mb-5">
@@ -102,9 +99,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#"><i class="bi bi-archive me-2"></i> Arsip</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#"><i class="bi bi-gear me-2"></i> Pengaturan</a>
           </li>
           <li class="nav-item mt-4 text-center">
             <a href="#" class="btn btn-outline-light rounded-3 w-75" id="createClass">
