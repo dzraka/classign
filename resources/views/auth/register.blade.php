@@ -63,6 +63,20 @@
                                         @enderror
                                     </div>
                                     <div class="form-floating mb-3">
+                                        <input type="password"
+                                               name="password_confirmation"
+                                               class="form-control text-white @error('password_confirmation') is-invalid @enderror"
+                                               style="border: none; background: transparent; border-bottom: solid; border-radius: 0"
+                                               id="register-password-confirmation"
+                                               placeholder="Konfirmasi Password"
+                                               required
+                                        />
+                                        <label for="register-password-confirmation" class="text-white fw-light">Konfirmasi Password</label>
+                                        @error('password_confirmation')
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-floating mb-3">
                                         <input type="hidden" name="role" value="{{ request('role', old('role')) }}">
                                     </div>
                                     <div class="text-center">
