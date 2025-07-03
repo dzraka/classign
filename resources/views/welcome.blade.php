@@ -56,9 +56,6 @@
               <a class="nav-link text-white" href="#about">Tentang Kami</a>
             </li>
           </ul>
-          <div class="btn btn-outline-light" id="navbarMenu">
-            <a class="nav-link" href="{{ route('login') }}">Masuk atau Daftar</a>
-          </div>
         </div>
       </div>
     </nav>
@@ -72,14 +69,16 @@
             <p class="fs-5 mb-3  text-white">
               ClAssign membantu pendidik menciptakan pengalaman belajar yang menarik yang dapat disesuaikan, dikelola, dan diukur. Tim Pengembang dari 3RWork for Education, ClAssign memberdayakan pendidik untuk meningkatkan dampak mereka dan mempersiapkan siswa untuk masa depan.
             </p>
-            <form id="teacherForm" action="{{ route('login') }}" method="GET" class="d-inline">
-              <input type="hidden" name="role" value="pengajar">
-              <button type="submit" class="btn btn-outline-light">Masuk sebagai Pengajar</button>
-            </form>
-            <form id="studentForm" action="{{ route('login') }}" method="GET" class="d-inline ms-2">
-              <input type="hidden" name="role" value="siswa">
-              <button type="submit" class="btn btn-outline-light">Masuk sebagai Siswa</button>
-            </form>
+            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 my-4">
+              <form id="teacherForm" action="{{ route('login') }}" method="GET" class="w-50 w-sm-auto">
+                <input type="hidden" name="role" value="pengajar">
+                <button type="submit" class="btn btn-outline-light w-100 w-sm-auto">Masuk sebagai Pengajar</button>
+              </form>
+              <form id="studentForm" action="{{ route('login') }}" method="GET" class="w-50 w-sm-auto">
+                <input type="hidden" name="role" value="siswa">
+                <button type="submit" class="btn btn-outline-light w-100 w-sm-auto">Masuk sebagai Siswa</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
