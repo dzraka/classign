@@ -19,10 +19,10 @@ Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
 // Protected Routes
 Route::middleware('auth')->group(function () {
-    // Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-    // Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
-
-    // Route::resource('kontaks', KontakController::class); 
-    // Route::resource('mahasiswa', MahasiswaController::class)->except(['show']); 
-    // Route::get('/mahasiswa/get-data', [MahasiswaController::class, 'getData'])->name('mahasiswa.get-data'); 
+    Route::get('/siswa', function () {
+        return view('siswa.index');
+    })->name('siswa.index');
+    Route::get('/pengajar', function () {
+        return view('pengajar.index');
+    })->name('pengajar.index');
 });

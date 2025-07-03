@@ -24,8 +24,12 @@ class LoginController extends Controller
         // Jika berhasil, dan checkbox "ingat saya" dicentang, maka sesi akan tetap aktif
         if (Auth::attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
-
-            return redirect()->intended('dashboard'); // Redirect ke Dashboard
+            $user = Auth::user();
+            if ($user->role === 'pengajar') {
+                return redirect()->route('pengajar.index');
+            } else {
+                return redirect()->route('siswa.index');
+            }
         }
 
         // Jika gagal login

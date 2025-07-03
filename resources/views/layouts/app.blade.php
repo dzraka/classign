@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title', 'ClAssign')</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <style>
@@ -78,8 +79,13 @@
       </div>
       <div class="row position-absolute bottom-0 mb-5">
         <ul class="nav flex-column px-3">
-          <li class="nav-item ">
-            <a class="nav-link text-white px-3 btn btn-outline-dark rounded-3 text-start" href="#"> <i class="bi bi-box-arrow-left me-3"></i> Keluar </a>
+          <li class="nav-item fs-4">
+            <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Yakin ingin keluar?')">
+              @csrf
+              <button type="submit" class="nav-link text-white d-flex align-items-center px-3 btn btn-link" style="text-decoration:none;">
+                <i class="bi bi-box-arrow-left me-3"></i> Keluar
+              </button>
+            </form>
           </li>
         </ul>
       </div>
@@ -110,7 +116,12 @@
       <div class="row position-absolute bottom-0 mb-5 w-100">
         <ul class="nav flex-column px-3">
           <li class="nav-item fs-4">
-            <a class="nav-link text-white d-flex align-items-center px-3" href="#"><i class="bi bi-box-arrow-left me-3"></i> Keluar</a>
+            <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Yakin ingin keluar?')">
+              @csrf
+              <button type="submit" class="nav-link text-white d-flex align-items-center px-3 btn btn-link" style="text-decoration:none;">
+                <i class="bi bi-box-arrow-left me-3"></i> Keluar
+              </button>
+            </form>
           </li>
         </ul>
       </div>

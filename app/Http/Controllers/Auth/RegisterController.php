@@ -22,7 +22,8 @@ class RegisterController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],                          
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()], 
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => ['required', 'in:pengajar,siswa'], // Validasi role harus ada dan hanya boleh 'pengajar' atau 'siswa'
         ]);
 
         // Membuat user baru di database dengan data yang sudah divalidasi
@@ -30,6 +31,7 @@ class RegisterController extends Controller
             'name' => $request->name,                                   // Ambil nama dari form
             'email' => $request->email,                                 // Ambil email dari form
             'password' => Hash::make($request->password),               // Hash password agar tidak tersimpan dalam bentuk asli (demi keamanan)
+            'role' => $request->role,                                   // Ambil role dari form
         ]);
 
         // Memicu event bahwa user baru telah berhasil mendaftar
@@ -38,7 +40,11 @@ class RegisterController extends Controller
         // Langsung login user tersebut setelah mendaftar
         Auth::login($user);
 
-        // REdirect Ke Dashboard
-        return redirect()->route('dashboard');
+        // Redirect sesuai role
+        if ($user->role === 'pengajar') {
+            return redirect()->route('pengajar.index');
+        } else {
+            return redirect()->route('siswa.index');
+        }
     }
 }
