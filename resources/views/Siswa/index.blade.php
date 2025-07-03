@@ -3,7 +3,7 @@
 @section('title', 'Dashboard Siswa')
 
 @section('content')
-  <h1 class="py-3">Selamat datang user</h1>
+  <h1 class="py-3">Selamat datang Pengguna</h1>
         <div class="row">
             <div class="col-md-4 mb-3">
                 <a href="#" class="btn">
