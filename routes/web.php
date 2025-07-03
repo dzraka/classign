@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
-    return view('siswa.index');
+    return view('welcome');
 });
 
 
