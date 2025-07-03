@@ -58,16 +58,16 @@
                                                id="signin-check" 
                                                {{ old('remember') ? 'checked' : '' }}
                                         />
-                                        <label class="form-check-label" for="signin-check">Remember Me</label>
+                                        <label class="form-check-label" for="signin-check">Ingat saya</label>
                                     </div>
 
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-light w-100 my-3 rounded-5">Sign In</button>
+                                        <button type="submit" class="btn btn-light w-100 my-3 rounded-5">Masuk</button>
                                     </div>
 
                                     <div class="text-center">
                                         <small class="text-wrap fw-light">
-                                            Don't have an account? 
+                                            Belum punya akun? 
                                             <a class="text-white fw-semibold" href="{{ route('register', request('role') ? ['role' => request('role')] : []) }}">Daftar</a>
                                         </small>
                                     </div>
