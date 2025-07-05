@@ -65,13 +65,13 @@
             <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start {{ request()->routeIs('profile') ? 'active' : '' }}" href="#"><i class="bi bi-person me-2"></i> Profil </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start {{ request()->routeIs('Siswa.index') || request()->routeIs('Pengajar.index') ? 'active' : '' }}" href="#"><i class="bi bi-house me-2"></i> Beranda </a>
+            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start {{ request()->routeIs('siswa.index') || request()->routeIs('pengajar.index') ? 'active' : '' }}" href="#"><i class="bi bi-house me-2"></i> Beranda </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start {{ request()->routeIs('Siswa.todo') ? 'active' : '' }}" href="#"><i class="bi bi-file-earmark-text"></i> Tugas </a>
+            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start {{ request()->routeIs('siswa.todo') ? 'active' : '' }}" href="#"><i class="bi bi-file-earmark-text"></i> Tugas </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start {{ request()->routeIs('Siswa.material') ? 'active' : '' }}" href="#"><i class="bi bi-book-half me-2"></i> Materi </a>
+            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start  {{ request()->routeIs('siswa.material') ? 'active' : '' }}" href="#"><i class="bi bi-book-half me-2"></i> Materi </a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start {{ request()->routeIs('kalender') ? 'active' : '' }}" href="#"><i class="bi bi-calendar me-2"></i> Kalender </a>
