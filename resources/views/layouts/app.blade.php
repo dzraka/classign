@@ -115,9 +115,15 @@
             <a class="nav-link text-white" href="#"><i class="bi bi-archive me-2"></i> Arsip</a>
           </li>
           <li class="nav-item mt-4 text-center">
-            <a href="#" class="btn btn-outline-light rounded-3 w-75" id="createClass">
+            @if(auth()->user() && auth()->user()->role === 'pengajar')
+            <a href="#" id="btnCreateClassMobile" class="btn btn-outline-light rounded-3 w-75" data-bs-toggle="tooltip" title="Buat Kelas">
+              <i class="bi bi-plus-lg"></i> Buat Kelas
+            </a>
+            @else
+            <a href="#" id="joinClassMobileBtn" class="btn btn-outline-light rounded-3 w-75" data-bs-toggle="tooltip" title="Gabung Kelas">
               <i class="bi bi-plus-lg"></i> Gabung Kelas
             </a>
+            @endif
           </li>
         </ul>
       </div>
