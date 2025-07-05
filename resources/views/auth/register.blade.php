@@ -2,12 +2,10 @@
 
 @section('title', 'Register')
 
-@section('bg-img', asset('img/bg1.jpg'))
-
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-5" style="max-width: 500px">
-            <div class="card rounded-4 shadow-sm p-3 text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px)">
+            <div class="card rounded-4 shadow p-3 text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px)">
                 <div class="card-body">
                     <div class="row" id="register-form">
                         <div class="col">
@@ -18,7 +16,7 @@
                               </div>
                                 <form action="{{ route('register') }}" method="POST">
                                     @csrf
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-1">
                                         <input type="text"
                                                name="name"
                                                class="form-control text-white @error('name') is-invalid @enderror"
@@ -33,7 +31,7 @@
                                             <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-1">
                                         <input type="email"
                                                name="email"
                                                class="form-control text-white @error('email') is-invalid @enderror"
@@ -48,7 +46,7 @@
                                             <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-1">
                                         <input type="password"
                                                name="password"
                                                class="form-control text-white @error('password') is-invalid @enderror"
@@ -62,7 +60,7 @@
                                             <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-1">
                                         <input type="password"
                                                name="password_confirmation"
                                                class="form-control text-white @error('password_confirmation') is-invalid @enderror"
@@ -76,11 +74,11 @@
                                             <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-1">
                                         <input type="hidden" name="role" value="{{ request('role', old('role')) }}">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-light w-100 my-3 rounded-5">Register</button>
+                                        <button type="submit" class="btn btn-outline-light w-100 my-3 rounded-5">Register</button>
                                     </div>
                                     <div class="text-center">
                                         <small class="text-wrap fw-light">

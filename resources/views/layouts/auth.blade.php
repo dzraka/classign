@@ -13,13 +13,13 @@
     </style>
     <title>@yield('title', 'Masuk')</title>
 </head>
-<body style="background-image: url({{ $__env->yieldContent('bg-img', asset('img/bg-signin.jpg')) }}); background-position: center; background-size: cover; background-repeat: no-repeat">
-    <div class="container-fluid position-relative min-vh-100">
+<body style="background-color: #364a6f;">
+<div class="container-fluid position-relative min-vh-100">
         <div class="row lh-1">
             <div class="my-4 text-white">
-                <p class="fw-semibold fs-5">ClAssign</p>
-                <hr class="rounded-4" style="width: 13rem; border: 1px solid; opacity: 1" />
-                <p>3rwork@classign.id</p>
+                <p class="fw-semibold fs-6">ClAssign</p>
+                <hr class="rounded-4" style="width: 10rem; border: 1px solid;" />
+                <p class="small">3rwork@classign.id</p>
             </div>
         </div>
         @yield('content')

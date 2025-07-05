@@ -5,14 +5,14 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-5" style="max-width: 500px">
-            <div class="card rounded-4 shadow-sm p-3 text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px)">
+            <div class="card rounded-4 shadow p-3 text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px)">
                 <div class="card-body">
                     <div class="row" id="signin-form">
                         <div class="col">
                             <div class="container">
                               <div class="text-center">
                                 <h2>ClAssign</h2>
-                                <small>Selamat datang, kumpulkan tugas mu dengan ClAssign!</small>
+                                <small>Selamat datang, belajar lebih menyenangkan dengan ClAssign!</small>
                               </div>
                                 
                                 <form action="{{ route('login') }}" method="POST">
@@ -20,7 +20,7 @@
                                     @if(request('role'))
                                         <input type="hidden" name="role" value="{{ request('role') }}">
                                     @endif
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-1">
                                         <input type="email" 
                                                name="email"
                                                class="form-control text-white @error('email') is-invalid @enderror" 
@@ -36,7 +36,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-1">
                                         <input type="password" 
                                                name="password"
                                                class="form-control text-white @error('password') is-invalid @enderror" 
@@ -51,7 +51,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-check form-check-inline mb-3">
+                                    <div class="form-check form-check-inline mb-1">
                                         <input class="form-check-input" 
                                                type="checkbox" 
                                                name="remember" 
@@ -62,7 +62,7 @@
                                     </div>
 
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-light w-100 my-3 rounded-5">Masuk</button>
+                                        <button type="submit" class="btn btn-outline-light w-100 my-3 rounded-5">Masuk</button>
                                     </div>
 
                                     <div class="text-center">
