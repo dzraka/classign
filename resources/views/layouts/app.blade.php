@@ -47,12 +47,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand me-auto" href=""> ClAssign <span class="navbar-text">for education</span> </a>
-        <a href="#" class="btn btn-outline-light rounded-5 mx-2 d-none d-lg-block" id="createClass">
-        @if(auth()->user() && auth()->user()->role === 'pengajar')
-            <i class="bi bi-plus-lg"></i>
-        @else
-            <i class="bi bi-plus-lg"></i>
-        @endif
+        <a href="#" class="btn btn-outline-light rounded-5 mx-2 d-none d-lg-block" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ auth()->user() && auth()->user()->role === 'pengajar' ? 'Buat Kelas' : 'Gabung Kelas' }}">
+          <i class="bi bi-plus-lg"></i>
         </a>
         <div class="navbar-text text-white d-none d-lg-block ms-3 fw-bold fs-3">
           @yield('page-title', 'Beranda')
@@ -68,6 +64,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start" href="#"><i class="bi bi-house me-2"></i> Beranda </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start" href="#"><i class="bi bi-file-earmark-text"></i> Tugas </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start" href="#"><i class="bi bi-book-half me-2"></i> Materi </a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white mb-3 btn btn-outline-dark rounded-3 text-start" href="#"><i class="bi bi-calendar me-2"></i> Kalender </a>
@@ -99,6 +101,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#"><i class="bi bi-house me-2"></i> Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#"><i class="bi bi-file-earmark-text me-2"></i> Tugas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#"><i class="bi bi-book-half me-2"></i> Materi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#"><i class="bi bi-calendar-event me-2"></i> Kalender</a>
@@ -160,6 +168,11 @@
               sidebarMobile.classList.remove('show');
             }
           }
+        });
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+          new bootstrap.Tooltip(tooltipTriggerEl);
         });
       });
     </script>
