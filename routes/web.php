@@ -8,7 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 //     return view('welcome');
 // });
 Route::get('/', function () {
-    return view('siswa.todo');
+    return view('siswa.material');
 });
 
 
