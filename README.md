@@ -6,7 +6,7 @@
 
 ClAssign adalah sistem manajemen tugas kelas berbasis web yang dibangun dengan Laravel. Aplikasi ini memungkinkan guru untuk membuat dan mengelola kelas, materi pembelajaran, serta tugas-tugas, sementara siswa dapat mengakses materi dan mengirimkan tugas mereka.
 
-## 🚀 Fitur Utama
+## Fitur Utama
 
 ### Untuk Guru (Teacher)
 
