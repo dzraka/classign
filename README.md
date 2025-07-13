@@ -45,8 +45,8 @@ ClAssign adalah sistem manajemen tugas kelas berbasis web yang dibangun dengan L
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
-cd ClAssignv2
+git clone https://github.com/dzraka/classign.git
+cd classign
 ```
 
 ### 2. Install Dependencies
@@ -153,7 +153,7 @@ ClAssign/
     └── logs/               # Application logs
 ```
 
-## 🛤️ Struktur Routes
+## Struktur Routes
 
 ### Authentication Routes
 
@@ -245,7 +245,7 @@ GET  /submissions/{id}/download # Download submission
 -   Dapat mengirim tugas
 -   Dapat melihat nilai dan feedback tugas
 
-## 🔧 Konfigurasi
+## Konfigurasi
 
 ### File Upload
 
