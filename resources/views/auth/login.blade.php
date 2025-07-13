@@ -1,85 +1,53 @@
 @extends('layouts.auth')
 
-@section('title', 'Masuk')
+@section('title', 'Masuk - ClAssign')
 
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-sm-5" style="max-width: 500px">
-        <div class="card rounded-4 shadow p-3 text-white" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(3px)">
-            <div class="card-body">
-                <div class="row" id="signin-form">
-                    <div class="col">
-                        <div class="container">
-                            <div class="text-center">
-                            <h2>ClAssign</h2>
-                            <small>Selamat datang, belajar lebih menyenangkan dengan ClAssign!</small>
-                            </div>
-                            
-                            <form action="{{ route('login') }}" method="POST">
-                                @csrf
-                                @if(request('role'))
-                                    <input type="hidden" name="role" value="{{ request('role') }}">
-                                @endif
-                                <div class="form-floating mb-1">
-                                    <input type="email" 
-                                            name="email"
-                                            class="form-control text-white @error('email') is-invalid @enderror" 
-                                            style="border: none; background: transparent; border-bottom: solid; border-radius: 0" 
-                                            id="signin-email" 
-                                            placeholder="name@example.com" 
-                                            required 
-                                            value="{{ old('email') }}"
-                                    />
-                                    <label for="signin-email" class="text-white fw-light">Email</label>
-                                    @error('email')
-                                        <span class="invalid-feedback">{{ $message }}</span>
-                                    @enderror
-                                </div>
+    <div class="col-md-6 col-lg-4" style="max-width: 500px">
+        <div class="card rounded-4 shadow bg-light p-3">
+            <div class="card-body p-4">
+                <div class="text-center mb-4">
+                    <h3 class="mt-2">ClAssign</h3>
+                    <p class="small">Selamat datang, belajar lebih menyenangkan dengan ClAssign!</p>
+                </div>
 
-                                <div class="form-floating mb-1">
-                                    <input type="password" 
-                                            name="password"
-                                            class="form-control text-white @error('password') is-invalid @enderror" 
-                                            style="border: none; background: transparent; border-bottom: solid; border-radius: 0" 
-                                            id="signin-password" 
-                                            placeholder="password" 
-                                            required 
-                                    />
-                                    <label for="signin-password" class="text-white fw-light">Password</label>
-                                    @error('password')
-                                        <span class="invalid-feedback">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-check form-check-inline mb-1">
-                                    <input class="form-check-input" 
-                                            type="checkbox" 
-                                            name="remember" 
-                                            id="signin-check" 
-                                            {{ old('remember') ? 'checked' : '' }}
-                                    />
-                                    <label class="form-check-label" for="signin-check">Ingat saya</label>
-                                </div>
-
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-outline-light w-100 my-3 rounded-5">Masuk</button>
-                                </div>
-
-                                <div class="text-center">
-                                    <small class="text-wrap fw-light">
-                                        Belum punya akun? 
-                                        <a class="text-white fw-semibold" href="{{ route('register', request('role') ? ['role' => request('role')] : []) }}">Daftar</a>
-                                    </small>
-                                </div>
-                            </form>
-
-                            <div class="me-auto mt-3">
-                                <a href="{{ url('/') }}" class="btn btn-outline-light rounded-3">
-                                    <i class="bi bi-caret-left"></i>
-                                </a>
-                            </div>
-                        </div>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control bg-transparent @error('email') is-invalid @enderror" id="email" name="email" placeholder="email@example.com" value="{{ old('email') }}" required >
+                        <label for="email" >Email</label>
+                        @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control bg-transparent @error('password') is-invalid @enderror" id="password" name="password" placeholder="password" required>
+                        <label for="password" >Password</label>
+                        @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark rounded-5">Masuk</button>
+                    </div>
+                </form>
+
+                <hr class="my-4">
+                
+                <div class="text-center">
+                    <p class="mb-0">Belum punya akun? 
+                        <a href="{{ route('register') }}" class="fw-semibold">Daftar</a>
+                    </p>
+                </div>
+
+                <div class="me-auto mt-3">
+                    <a href="{{ route('index') }}" class="btn btn-dark rounded-3">
+                        <i class="bi bi-caret-left"></i>
+                    </a>
                 </div>
             </div>
         </div>

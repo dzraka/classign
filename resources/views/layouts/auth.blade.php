@@ -17,7 +17,7 @@
     <div class="container-fluid position-relative min-vh-100">
         <div class="row lh-1">
             <div class="my-4 text-white">
-                <p class="fw-semibold fs-4">ClAssign</p>
+                <p class="fw-semibold fs-6">ClAssign</p>
                 <hr class="rounded-4" style="width: 10rem; border: 1px solid;" />
                 <p class="small">3rwork@classign.id</p>
             </div>

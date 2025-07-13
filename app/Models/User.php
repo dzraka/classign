@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'display_name',
     ];
 
     /**
@@ -45,5 +46,46 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function teachingClasses()
+    {
+        return $this->hasMany(ClassModel::class, 'teacher_id');
+    }
+
+    public function enrolledClasses()
+    {
+        return $this->belongsToMany(ClassModel::class, 'class_enrollments', 'student_id', 'class_id')
+                    ->withTimestamps();
+    }
+
+    public function submissions()
+    {
+        return $this->hasMany(Submission::class, 'student_id');
+    }
+
+    public function materials()
+    {
+        return $this->hasMany(Material::class, 'teacher_id');
+    }
+
+    public function assignments()
+    {
+        return $this->hasMany(Assignment::class, 'teacher_id');
+    }
+
+    public function isTeacher()
+    {
+        return $this->role === 'teacher';
+    }
+
+    public function isStudent()
+    {
+        return $this->role === 'student';
+    }
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->attributes['display_name'] ?: $this->name;
     }
 }
